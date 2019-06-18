@@ -1,0 +1,15 @@
+#Linux packet sniffer
+
+!/usr/bin/python
+
+#import module
+import socket
+PORT = int(port number) the port number needs to be added before runingh the program
+ 
+#create an INET, raw socket
+s = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_TCP)
+ 
+# receive a packet
+while True: # look at changing this
+   # print output on terminal
+   print s.recvfrom(PORT)
