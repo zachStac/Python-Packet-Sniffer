@@ -1,4 +1,12 @@
+import socket
+
+PORT = int(port number)
+IP = str(IP address)
+
 s = socket.socket(socket.AF_INET,socket.SOCK_RAW,socket.IPPROTO_IP)
-s.bind(("YOUR_INTERFACE_IP",0))
+s.bind(("IP",0))
 s.setsockopt(socket.IPPROTO_IP,socket.IP_HDRINCL,1)
 s.ioctl(socket.SIO_RCVALL,socket.RCVALL_ON)
+
+while True: 
+   print s.recvfrom(PORT)
